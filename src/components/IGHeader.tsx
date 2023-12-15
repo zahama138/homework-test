@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import HOMEPAGE from "../global";
+
+const HREF = window.location.href;
 
 const IGHeader: React.FC = () => {
   const go = useNavigate();
@@ -8,9 +11,9 @@ const IGHeader: React.FC = () => {
       <div className="flex justify-between items-center h-[60px] px-2 box-border lg:max-w-[1024px] lg:mx-auto lg:px-0">
         <img
           className="w-[100px] cursor-pointer"
-          src="/images/logo.svg"
+          src={HREF + "/images/logo.svg"}
           onClick={() => {
-            go("/");
+            go(HOMEPAGE + "/");
           }}
         />
         <div className="flex items-center">
@@ -21,7 +24,7 @@ const IGHeader: React.FC = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             onClick={() => {
-              go("/");
+              go(HOMEPAGE + "/");
             }}
           >
             <path
@@ -38,7 +41,7 @@ const IGHeader: React.FC = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             onClick={() => {
-              go("/following");
+              go(HOMEPAGE + "/following");
               // fetch('http://localhost:3004/posts/1', {
               //   method: 'PUT',
               //   body: JSON.stringify({ "title": "json-server", "author": "2222" }),
